@@ -1,0 +1,9 @@
+{
+    "java.project.referencedLibraries": [
+        "Libs/commons-lang3-3.8.1.jar",
+        "Libs/commons-logging-1.2.jar",
+        "Libs/hsqldb-2.5.0.jar",
+        "Libs/jackcess-3.0.1.jar",
+        "Libs/ucanaccess-5.0.0.jar"
+    ]
+}
