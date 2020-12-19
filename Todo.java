@@ -61,7 +61,6 @@ Todo()
         
     if (ae.getSource()== b5)
     {
-       
         JOptionPane.showMessageDialog(j,"Your Task has been Displayed "); 
         try{
             String databaseURL = "jdbc:ucanaccess://Todo.accdb";
@@ -71,9 +70,7 @@ Todo()
             ResultSet rs = statement.executeQuery("SELECT * FROM Tasks");
             while (rs.next())
             {
-    
                 String Task = rs.getString("Task");
-        
                 System.out.println(Task) ;
              }
         }
@@ -94,11 +91,8 @@ public class Secondframe extends JFrame implements ActionListener
     Secondframe()
     {
         setLayout(new FlowLayout(FlowLayout.LEFT));
-
         l1 = new JLabel("Enter Task");
-        
         t1 = new JTextField(100);
-    
         s = new JButton("Submit");
         add(l1);
         add(t1);
