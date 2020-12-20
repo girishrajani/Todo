@@ -17,9 +17,12 @@ class MainWindow extends JFrame{
     JMenuBar mainBar;
     JMenu functions;
     JMenuItem addTask,displayTask,dark,light;
-    JButton welcome,addTaskButton,displayTaskButton;
+    JButton welcome,addTaskButton,displayTaskButton,delButton;
     JPanel buttonPanel;
     JLabel blankLable;
+    JMenuBar delTaskBar;
+    JMenu delete;
+    JMenuItem delItem;
     MainWindow(){
 /*
         This constructor holds the code for the Main Window Which
@@ -35,11 +38,17 @@ class MainWindow extends JFrame{
         //Menu Bar Code Starts
         mainBar = new JMenuBar();
         functions = new JMenu("Functions");
+        delete = new JMenu("Delete");
+        delItem = new JMenuItem("Delete All Tasks");
+        delete.add(delItem);
         mainBar.add(functions);
+        mainBar.add(delete);
         setJMenuBar(mainBar); 
         addTask = new JMenuItem("Add Task");
         addTask.addActionListener(new EventHandling());
         displayTask = new JMenuItem("Display Tasks");
+        displayTask.addActionListener(new EventHandling());
+        delItem.addActionListener(new EventHandling());
         functions.add(addTask);
         functions.add(displayTask);
         //MenuBar Code Ends
@@ -53,8 +62,12 @@ class MainWindow extends JFrame{
         addTaskButton = new JButton("Add Task");
         addTaskButton.addActionListener(new EventHandling());
         displayTaskButton = new JButton("Display Tasks");
+        displayTaskButton.addActionListener(new EventHandling());
+        delButton = new JButton("Delete All Tasks");
+        delButton.addActionListener(new EventHandling());
         buttonPanel.add(addTaskButton);
         buttonPanel.add(displayTaskButton);
+        buttonPanel.add(delButton);
         buttonPanel.setLayout(new FlowLayout());
         buttonPanel.setBackground(Color.darkGray); //Default Theme for the App set to Dark
         add(buttonPanel,BorderLayout.CENTER);
